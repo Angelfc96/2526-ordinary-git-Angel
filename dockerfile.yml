@@ -1,0 +1,10 @@
+services:
+  app:
+    image: node:latest
+    working_dir: /app
+    volumes:
+      - ./app:/app
+    command: bash –c "npm install && node server.js"
+    ports:
+      - "4005:3000"
+    restart: unless-stopped
